@@ -41,8 +41,14 @@ class EmpleadosController extends Controller
         //
     }
 
+    /* Condicionales y Loops */
     public function info()
     {
-        return view('empleados.info');
+        $arreglo = array("Ricardo", "Victor", "Pablo", "Eduardo", "Zaahira", "Raul", "Carlos", "Javier", "Adan", "Mariel", "Pedro");
+        //dd($arreglo);
+
+        $calificacion = 50;
+
+        return view('empleados.info', compact('arreglo', 'calificacion'));
     }
 }
