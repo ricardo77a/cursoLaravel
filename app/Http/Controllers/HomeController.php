@@ -6,23 +6,35 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         return view('home');
     }
+
+    /* Ruta y controlador de prueba sin parámetros */
+    public function pruebaRuta()
+    {
+        return 'hola mundo desde controller';
+    }
+
+    /* Ruta y controlador de prueba con parámetros */
+    public function nombre($nombre)
+    {
+        return 'Tu nombre es '.$nombre;
+    }
+
+    /* Ruta y controlador de prueba con parámetros a vista */
+    public function dependencia($dependencia)
+    {
+        //return view('dependencia', compact('dependencia'));
+
+
+        return view('dependencia')->with('dependencia', $dependencia);
+    }
+
 }
