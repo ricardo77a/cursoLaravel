@@ -8,12 +8,12 @@ class EmpleadosController extends Controller
 {
     public function index()
     {
-        //
+        return view('empleados.index');
     }
 
     public function create()
     {
-        //
+        return view('empleados.create');
     }
 
     public function store(Request $request)

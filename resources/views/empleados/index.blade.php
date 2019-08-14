@@ -1,4 +1,4 @@
-@include('layouts.main')
+@extends('layouts.main')
 
 @section('title', 'Listado de Empleados')
 
@@ -11,16 +11,23 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th></th>
+						<th>Id</th>
+						<th>Nombre</th>
+						<th>Apellido Paterno</th>
+						<th>Apellido Materno</th>
+						<th>Puesto</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
 						<td></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-
 @endsection
