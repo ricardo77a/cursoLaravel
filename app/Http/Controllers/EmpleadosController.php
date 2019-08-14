@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Empleado;
 
 class EmpleadosController extends Controller
 {
@@ -18,7 +19,16 @@ class EmpleadosController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $empleado = new Empleado($request->all());
+        /* Asignación */
+        /*
+        $empleado->nombre = $request->nombre;
+        $nombre = 'Ramón';
+        $empleado->nombre = $nombre;
+        */
+        //dd($request->all(), $empleado);
+        $empleado->save();
+        return redirect()->route('empleados.index');
     }
 
     public function show($id)

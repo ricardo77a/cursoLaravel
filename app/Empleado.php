@@ -18,6 +18,6 @@ class Empleado extends Model
 
 
     protected $fillable = [
-        'nombre', 'apellido_paterno', 'apellido_materno', 'direccion', 'puesto', 'telefono',
+        'nombre', 'apellido_paterno', 'apellido_materno', 'direccion', 'puesto', 'telefono', 'correo'
     ];
 }
