@@ -1,7 +1,7 @@
 # cursoLaravel
  Curso de Laravel 5.8 Nivel Básico impartido en el Instituto de Selección y Capacitación del Estado de Zacatecas
 
-#Instrucciones
+Instrucciones
 Cambiar el nombre de .env.example a .env
 Modificar en el mismo el nombre de nuestra base de datos
 
