@@ -35,30 +35,24 @@ class EmpleadosController extends Controller
         return redirect()->route('empleados.index');
     }
 
-
-
-
     public function show($id)
     {
         $empleado = Empleado::FindOrFail($id);
         return view('empleados.show', compact('empleado'));
     }
 
-
-
-
-
-
-
-
     public function edit($id)
     {
-
+        $empleado = Empleado::FindOrFail($id);
+        return view('empleados.edit', compact('empleado'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $empleado = Empleado::FindOrFail($id);
+        $empleado->fill($request->all());
+        $empleado->save();
+        return redirect()->route('empleados.index');
     }
 
     public function destroy($id)

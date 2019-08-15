@@ -17,6 +17,7 @@
 						<th>Apellido Materno</th>
 						<th>Puesto</th>
 						<th>Ver</th>
+						<th>Editar</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -30,6 +31,11 @@
 							<td>
 								<a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-info">
 									<i class="glyphicon glyphicon-eye-open"></i>
+								</a>
+							</td>
+							<td>
+								<a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-warning">
+									<i class="glyphicon glyphicon-edit"></i>
 								</a>
 							</td>
 						</tr>
