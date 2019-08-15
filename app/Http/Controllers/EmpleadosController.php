@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Empleado;
+use App\Http\Requests\EmpleadosRequest;
 
 class EmpleadosController extends Controller
 {
     public function index()
     {
-        return view('empleados.index');
+        $empleados = Empleado::get();
+        //$empleados = Empleado::get();
+        //dd($empleados);
+        return view('empleados.index', compact('empleados'));
     }
 
     public function create()
@@ -17,7 +21,7 @@ class EmpleadosController extends Controller
         return view('empleados.create');
     }
 
-    public function store(Request $request)
+    public function store(EmpleadosRequest $request)
     {
         $empleado = new Empleado($request->all());
         /* Asignación */
@@ -31,14 +35,25 @@ class EmpleadosController extends Controller
         return redirect()->route('empleados.index');
     }
 
+
+
+
     public function show($id)
     {
-        //
+        $empleado = Empleado::FindOrFail($id);
+        return view('empleados.show', compact('empleado'));
     }
+
+
+
+
+
+
+
 
     public function edit($id)
     {
-        //
+
     }
 
     public function update(Request $request, $id)

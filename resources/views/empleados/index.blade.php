@@ -8,7 +8,7 @@
 			<h3 class="panel-title">Listado de empleados</h3>
 		</div>
 		<div class="panel-body">
-			<table class="table table-hover">
+			<table class="table table-hover dataTable">
 				<thead>
 					<tr>
 						<th>Id</th>
@@ -16,16 +16,24 @@
 						<th>Apellido Paterno</th>
 						<th>Apellido Materno</th>
 						<th>Puesto</th>
+						<th>Ver</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
+					@foreach ($empleados as $empleado)
+						<tr>
+							<td>{{ $empleado->id }}</td>
+							<td>{{ $empleado->nombre }}</td>
+							<td>{{ $empleado->apellido_paterno }}</td>
+							<td>{{ $empleado->apellido_materno }}</td>
+							<td>{{ $empleado->puesto }}</td>
+							<td>
+								<a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-info">
+									<i class="glyphicon glyphicon-eye-open"></i>
+								</a>
+							</td>
+						</tr>
+					@endforeach
 				</tbody>
 			</table>
 		</div>
