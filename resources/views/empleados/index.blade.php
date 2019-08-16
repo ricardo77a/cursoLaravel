@@ -18,6 +18,7 @@
 						<th>Puesto</th>
 						<th>Ver</th>
 						<th>Editar</th>
+						<th>Borrar</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,6 +39,37 @@
 									<i class="glyphicon glyphicon-edit"></i>
 								</a>
 							</td>
+
+
+
+
+
+<td>
+	<form method="POST" action="{{ route('empleados.destroy', $empleado->id) }}" role="form">
+		@csrf
+		@method('delete')
+		<button type="submit" class="btn btn-danger">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+		</button>
+	</form>
+</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 						</tr>
 					@endforeach
 				</tbody>
@@ -45,3 +77,4 @@
 		</div>
 	</div>
 @endsection
+

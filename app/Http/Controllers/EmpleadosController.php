@@ -47,7 +47,7 @@ class EmpleadosController extends Controller
         return view('empleados.edit', compact('empleado'));
     }
 
-    public function update(Request $request, $id)
+    public function update(EmpleadosRequest $request, $id)
     {
         $empleado = Empleado::FindOrFail($id);
         $empleado->fill($request->all());
@@ -57,7 +57,9 @@ class EmpleadosController extends Controller
 
     public function destroy($id)
     {
-        //
+        $empleado = Empleado::FindOrFail($id);
+        $empleado->delete();
+        return redirect()->route('empleados.index');
     }
 
     /* Condicionales y Loops */
