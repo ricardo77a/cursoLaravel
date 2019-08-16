@@ -18,7 +18,7 @@
 						<th>Puesto</th>
 						<th>Ver</th>
 						<th>Editar</th>
-						<th>Borrar</th>
+						<th>Eliminar</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -31,45 +31,33 @@
 							<td>{{ $empleado->puesto }}</td>
 							<td>
 								<a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-info">
+									{{--
 									<i class="glyphicon glyphicon-eye-open"></i>
+									 --}}
+									 Show
 								</a>
 							</td>
 							<td>
 								<a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-warning">
+									{{--
 									<i class="glyphicon glyphicon-edit"></i>
+									 --}}
+									 edit
 								</a>
 							</td>
 
-
-
-
-
-<td>
-	<form method="POST" action="{{ route('empleados.destroy', $empleado->id) }}" role="form">
-		@csrf
-		@method('delete')
-		<button type="submit" class="btn btn-danger">
-			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-		</button>
-	</form>
-</td>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+							<td>
+								<form method="POST" action="{{ route('empleados.destroy', $empleado->id) }}" role="form">
+									@csrf
+									@method('delete')
+									<button type="submit" class="btn btn-danger">
+										{{--
+										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+										 --}}
+										 delete
+									</button>
+								</form>
+							</td>
 						</tr>
 					@endforeach
 				</tbody>

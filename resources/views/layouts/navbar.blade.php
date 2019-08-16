@@ -25,6 +25,14 @@
 			</ul>
 
 
+			<ul class="nav navbar-nav">
+				<li class="{{ Route::currentRouteNamed('incidencias.index') ? 'active' : ''  }}">
+					<a href="{{ route('incidencias.index') }}">Listado de Incidencias</a>
+				</li>
+				<li class="{{ Route::currentRouteNamed('incidencias.create') ? 'active' : ''  }}">
+					<a href="{{ route('incidencias.create') }}" >Crear Incidencia</a>
+				</li>
+			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">

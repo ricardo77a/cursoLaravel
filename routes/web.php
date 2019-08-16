@@ -56,3 +56,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('info', 'EmpleadosController@info');
 /* Resource route a resource controller */
 Route::resource('empleados', 'EmpleadosController');
+Route::resource('incidencias', 'IncidenciaController');
