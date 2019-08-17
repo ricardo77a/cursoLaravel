@@ -3,14 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>@yield('title')</title>
+
+
 		<!-- Latest compiled and minified CSS & JS -->
-		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="//code.jquery.com/jquery.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 		{{-- CSS de DataTables --}}
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}">
-		<script src="{{ asset('js/jquery.js') }}"></script>
 		{{-- Jquery del Datatables --}}
 		<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	</head>
 	<body>
 

@@ -36,18 +36,20 @@ class IncidenciaController extends Controller
 
     public function edit($id)
     {
+        $empleados = Empleado::get();
         $incidencia = Incidencia::FindOrFail($id);
-        return view('incidencias.create', compact('incidencia'));
+        return view('incidencias.edit', compact('incidencia', 'empleados'));
     }
 
-    public function update(Request $request, Incidencia $incidencia)
+    public function update(IncidenciasRequest $request, $id)
     {
         $incidencia = Incidencia::FindOrFail($id);
+        $incidencia->fill($request->all());
         $incidencia->save();
         return redirect()->route('incidencias.index');
     }
 
-    public function destroy(Incidencia $incidencia)
+    public function destroy($id)
     {
         $incidencia = Incidencia::FindOrFail($id);
         $incidencia->delete();
