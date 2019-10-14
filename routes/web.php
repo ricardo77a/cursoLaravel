@@ -24,12 +24,6 @@ Route::get('foo', function () {
 });
 
 
-
-
-
-
-
-
 Route::get('user/{id}', function ($id) {
     return 'Tu nombre es: '.$id;
 });
@@ -57,3 +51,10 @@ Route::get('info', 'EmpleadosController@info');
 /* Resource route a resource controller */
 Route::resource('empleados', 'EmpleadosController');
 Route::resource('incidencias', 'IncidenciaController');
+Route::resource('equipos', 'EquiposController');
+Route::get('get-equipos/puntos', 'equiposController@puntos');
+Route::get('get-equipos/jugados', 'equiposController@jugados');
+Route::get('get-equipos/ganados', 'equiposController@ganados');
+Route::get('get-equipos/empatados', 'equiposController@empatados');
+Route::get('get-equipos/perdidos', 'equiposController@perdidos');
+Route::get('get-equipos/equipos', 'equiposController@equipos');
